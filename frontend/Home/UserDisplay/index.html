@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div id="customers-container">
+        <button id="close-customers-container" onclick="closeShowToAdd()">X</button>
+        <table id="ctable">
+            <tr id="tableheadings">
+                <th class="name">Name</th>
+                <th class="email">Email</th>
+                <th class="phone">PhoneNumber</th>
+                <th class="address">Address</th>
+                <th class="dob">DOB</th>
+                <th class="gender">Gender</th>
+                <th class="occupation">Occupation</th>
+                <th class="status">MembershipStatus</th>
+                <th class="purchaseDate">PurchaseDate</th>
+            </tr>
+        </table>
+        
+    </div>
+    <div class="inventory-container">
+        <h2>Your Inventory</h2>
+        <button id="addUserButton" onclick="showToAdd()"><i class="bi bi-person-plus-fill"></i></button>
+        <table id="inventoryTable">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Occupation</th>
+                    <th>Membership Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inventory rows will be inserted here dynamically -->
+            </tbody>
+        </table>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

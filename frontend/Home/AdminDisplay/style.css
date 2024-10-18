@@ -1,0 +1,289 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    margin: 20px auto;
+    max-width: 90%;
+    position: relative;
+    padding-top: 60px; /* Space for the buttons */
+}
+
+#table {
+    width: 80%; /* Adjust table width to fit better */
+    max-width: 800px; /* Ensure table fits within the browser width */
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+#table th, #table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px; /* Adjust font size for a smaller table */
+}
+
+#table th {
+    background-color: #f4f4f4;
+}
+
+#inventory-container {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    overflow: auto; /* Add scrollbar if content exceeds dimensions */
+}
+
+#close-inventory-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#inventoryTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#inventoryTable th, #inventoryTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px; 
+}
+
+#inventoryTable th {
+    background-color: #f4f4f4;
+}
+
+#userInventory {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#addUserButton {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#addUserButton i, #userInventory i {
+    margin-right: 5px;
+}
+
+#addUser, #editUser {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; 
+    max-width: 600px;
+    height: 80vh; 
+    max-height: 500px; 
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    overflow: auto; 
+}
+
+#addUser h3, #editUser h3 {
+    margin-top: 0;
+}
+
+#addUserForm label, #editUserForm label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#addUserForm input, #editUserForm input, #addUserForm select, #editUserForm select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#submitAddUserButton, #submitEditUserButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#submitAddUserButton:hover, #submitEditUserButton:hover {
+    background-color: #2980b9;
+}
+
+#editUserForm input, #editUserForm select {
+    margin-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center; 
+}
+
+.actions .edit {
+    background-color: #1d59da;
+    color: white;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.actions .delete {
+    background-color: #ef2009;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.actions .edit:hover, .actions .delete:hover {
+    opacity: 0.8;
+} 
+
+/* Requests Container Styling */
+#requests-container {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    z-index: 1000;
+    overflow-x: auto; /* Add horizontal scrollbar if necessary */
+}
+
+/* Close Button Styling */
+#close-requests-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#close-requests-container:hover {
+    background-color: #e60000;
+}
+
+/* Heading Styling */
+#requests-container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Table Styling */
+#requestsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#requestsTable th, #requestsTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#requestsTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Button Styling Inside Table */
+#requestsTable .reject, #requestsTable .accept {
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center; /* Center text within buttons */
+    display: inline-block; /* Ensure buttons align correctly */
+}
+
+#requestsTable .reject {
+    background-color: #e74c3c;
+}
+
+#requestsTable .accept {
+    background-color: #2ecc71;
+}
+
+#requestsTable .reject:hover {
+    background-color: #c0392b;
+}
+
+#requestsTable .accept:hover {
+    background-color: #27ae60;
+}
+
+/* Ensure row elements are displayed inline */
+.row {
+    display: table-row !important; /* Default display for table rows */
+}
+#requests{
+    position: fixed;
+    left: 200px;
+    top: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+}
